@@ -56,12 +56,6 @@
             <artifactId>all-themes</artifactId>
             <version>1.0.8</version>
         </dependency>
-        <dependency>
-            <groupId>org.ocpsoft.rewrite</groupId>
-            <artifactId>rewrite-servlet</artifactId>
-            <version>3.4.1.Final</version>
-        </dependency>
-
         <!-- Database dependencies -->
         <dependency>
             <groupId>org.hsqldb</groupId>
@@ -72,7 +66,6 @@
 
     <!-- Package as an executable jar -->
     <build>
-        <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
