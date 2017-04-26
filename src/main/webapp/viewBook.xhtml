@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
 <f:view>
-    <ui:composition template="layout.xhtml">
-        <f:metadata>
-            <f:viewParam name="id" value="#{bookController.book.id}"/>
-            <f:viewAction action="#{bookController.doFindBookById()}"/>
-        </f:metadata>
-        <ui:define name="title">View a book</ui:define>
-        <ui:define name="content">
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Title : "/>
-                <h:outputText value="#{bookController.book.title}"/>
-                <p:outputLabel value="Price : "/>
-                <h:outputText value="#{bookController.book.price}"/>
-                <p:outputLabel value="Description : "/>
-                <h:outputText value="#{bookController.book.description}" cols="16" rows="3"/>
-                <p:outputLabel value="Number of pages : "/>
-                <h:outputText value="#{bookController.book.nbofpage}"/>
-                <p:outputLabel value="Illustrations : "/>
-                <h:selectBooleanCheckbox value="#{bookController.book.illustrations}"/>
-            </p:panelGrid>
-        </ui:define>
-    </ui:composition>
+	<ui:composition template="layout.xhtml">
+		<f:metadata>
+			<f:viewParam name="id" value="#{bookController.book.id}"/>
+			<f:viewAction action="#{bookController.doFindBookById()}"/>
+		</f:metadata>
+		<ui:define name="title">View a book</ui:define>
+		<ui:define name="content">
+			<p:panelGrid columns="2">
+				<p:outputLabel value="Title : "/>
+				<h:outputText value="#{bookController.book.title}"/>
+				<p:outputLabel value="Price : "/>
+				<h:outputText value="#{bookController.book.price}"/>
+				<p:outputLabel value="Description : "/>
+				<h:outputText value="#{bookController.book.description}" cols="16" rows="3"/>
+				<p:outputLabel value="Number of pages : "/>
+				<h:outputText value="#{bookController.book.nbofpage}"/>
+				<p:outputLabel value="Illustrations : "/>
+				<h:selectBooleanCheckbox value="#{bookController.book.illustrations}"/>
+			</p:panelGrid>
+		</ui:define>
+	</ui:composition>
 </f:view>
 </html>

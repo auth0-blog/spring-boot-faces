@@ -12,27 +12,27 @@ import java.util.List;
 @Scope(value = "request")
 public class BookController {
 
-    @Autowired
-    BookRepository bookRepository;
+	@Autowired
+	BookRepository bookRepository;
 
-    private Book book = new Book();
+	private Book book = new Book();
 
-    public Book getBook() {
-        return book;
-    }
+	public Book getBook() {
+		return book;
+	}
 
-    public String doCreateBook() {
-        this.bookRepository.save(book);
-        book = new Book();
-        return "index.xhtml";
-    }
+	public String doCreateBook() {
+		this.bookRepository.save(book);
+		book = new Book();
+		return "index.xhtml";
+	}
 
-    public void doFindBookById() {
-        book = bookRepository.findOne(this.book.getId());
-    }
+	public void doFindBookById() {
+		book = bookRepository.findOne(this.book.getId());
+	}
 
-    public List<Book> findAllBooks() {
-        return this.bookRepository.findAll();
-    }
+	public List<Book> findAllBooks() {
+		return this.bookRepository.findAll();
+	}
 
 }

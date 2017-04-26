@@ -13,13 +13,13 @@ import javax.faces.webapp.FacesServlet;
 @ComponentScan({"com.auth0.samples.bootfaces"})
 public class Application extends SpringBootServletInitializer {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(Application.class, args);
+	}
 
-    @Bean
-    public ServletRegistrationBean servletRegistrationBean() {
-        FacesServlet servlet = new FacesServlet();
-        return new ServletRegistrationBean(servlet, "*.jsf");
-    }
+	@Bean
+	public ServletRegistrationBean servletRegistrationBean() {
+		FacesServlet servlet = new FacesServlet();
+		return new ServletRegistrationBean(servlet, "*.jsf");
+	}
 }
