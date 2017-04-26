@@ -16,7 +16,7 @@ import java.util.EnumSet;
 @EnableAutoConfiguration
 @ComponentScan({"com.auth0.samples.bootfaces"})
 public class Application extends SpringBootServletInitializer {
-	
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -26,7 +26,7 @@ public class Application extends SpringBootServletInitializer {
         FacesServlet servlet = new FacesServlet();
         return new ServletRegistrationBean(servlet, "*.jsf");
     }
-    
+
     @Bean
     public FilterRegistrationBean rewriteFilter() {
         FilterRegistrationBean rwFilter = new FilterRegistrationBean(new RewriteFilter());

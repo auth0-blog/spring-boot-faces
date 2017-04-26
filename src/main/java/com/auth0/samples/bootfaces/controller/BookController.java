@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-@Scope(value="request")
+@Scope(value = "request")
 public class BookController {
 
     @Autowired
