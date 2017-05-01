@@ -2,10 +2,33 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://java.sun.com/jsf/html"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:composition template="../layout.xhtml">
 
 	<ui:define name="content">
+		<h1>Products List</h1>
+		<p:dataTable var="product" value="#{listProducts.products}" styleClass="table table-striped">
+			<p:column>
+				<f:facet name="header"># Id</f:facet>
+				<h:outputText value="#{product.id}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Name</f:facet>
+				<h:outputText value="#{product.name}" />
+			</p:column>
+
+			<p:column>
+				<f:facet name="header">Price</f:facet>
+				<h:outputText value="#{product.price}">
+					<f:convertNumber type="currency" currencySymbol="$" />
+				</h:outputText>
+			</p:column>
+		</p:dataTable>
+
 	</ui:define>
 
 </ui:composition>

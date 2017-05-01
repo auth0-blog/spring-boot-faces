@@ -1,34 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	  xmlns:f="http://xmlns.jcp.org/jsf/core"
 	  xmlns:p="http://primefaces.org/ui">
 <f:view>
-	<h:head>
-		<title><ui:insert name="title">Default title</ui:insert></title>
-	</h:head>
-	<h:body>
-		<p:link value="Create a book" outcome="index.xhtml"/>
-		<div class="ui-grid ui-grid-responsive">
-			<div class="ui-grid-row">
-				<div class="ui-grid-col-3"></div>
-				<div class="ui-grid-col-6"></div>
-				<div class="ui-grid-col-3"></div>
+<h:head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title><ui:insert name="title">Default title</ui:insert></title>
+	<!-- Bootstrap -->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</h:head>
+<h:body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12">
+				<p:growl for="errors" showDetail="true" autoUpdate="true"/>
 			</div>
-			<div class="ui-grid-row">
-				<div class="ui-grid-col-3"></div>
-				<div class="ui-grid-col-6">
-					<p:growl for="errors" showDetail="true" autoUpdate="true"/>
-					<ui:insert name="content">Default content</ui:insert>
-				</div>
-				<div class="ui-grid-col-3"></div>
+			<div class="col-xs-12">
+				<ui:insert name="content">Default content</ui:insert>
 			</div>
 		</div>
-		<br/><br/>
-		<h:outputText value="Oakdale Software Tutorial" style="font-style: italic"/>
-	</h:body>
+	</div>
+</h:body>
 </f:view>
 </html>
