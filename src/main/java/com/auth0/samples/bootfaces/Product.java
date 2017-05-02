@@ -1,6 +1,6 @@
 package com.auth0.samples.bootfaces;
 
-import lombok.Getter;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Getter
+@Data
 @Entity
 public class Product {
 	@Id
