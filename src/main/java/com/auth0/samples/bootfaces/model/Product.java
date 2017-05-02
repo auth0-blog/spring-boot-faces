@@ -1,6 +1,6 @@
 package com.auth0.samples.bootfaces.model;
 
-import lombok.Getter;
+import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 
-@Getter
+@Data
 @Entity
 public class Product {
 	@Id
@@ -22,10 +22,5 @@ public class Product {
 	@Column
 	private BigDecimal price;
 
-	protected Product() { }
-
-	public Product(String name, BigDecimal price) {
-		this.name = name;
-		this.price = price;
-	}
+	public Product() { }
 }

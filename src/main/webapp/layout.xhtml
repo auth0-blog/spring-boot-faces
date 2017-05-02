@@ -10,18 +10,22 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title><ui:insert name="title">Default title</ui:insert></title>
-	<!-- Bootstrap -->
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 </h:head>
 <h:body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				<p:growl for="errors" showDetail="true" autoUpdate="true"/>
-			</div>
-			<div class="col-xs-12">
-				<ui:insert name="content">Default content</ui:insert>
-			</div>
+	<div class="ui-g">
+		<div class="ui-g-12">
+			<p:growl for="errors" showDetail="true" autoUpdate="true"/>
+		</div>
+		<div class="ui-g-12">
+			<p:toolbar>
+				<f:facet name="left">
+					<p:button href="/" value="List of Products" />
+					<p:button href="/product" value="New Product" />
+				</f:facet>
+			</p:toolbar>
+		</div>
+		<div class="ui-g-12">
+			<ui:insert name="content">Default content</ui:insert>
 		</div>
 	</div>
 </h:body>
