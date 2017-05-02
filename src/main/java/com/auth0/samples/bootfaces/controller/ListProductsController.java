@@ -11,10 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.util.List;
 
-@Scope (value = "request")
+@Scope (value = "session")
 @Component (value = "listProducts")
 @ELBeanName(value = "listProducts")
 @Join(path = "/", to = "/product/product-list.jsf")
@@ -33,5 +32,11 @@ public class ListProductsController {
 
 	public List<Product> getProducts() {
 		return products;
+	}
+
+	public String delete(Product product) {
+		productRepository.delete(product.getId());
+		loadData();
+		return null;
 	}
 }

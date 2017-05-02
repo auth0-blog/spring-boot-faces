@@ -9,26 +9,33 @@
 <ui:composition template="../layout.xhtml">
 
 	<ui:define name="content">
-		<h1>Products List</h1>
-		<p:dataTable var="product" value="#{listProducts.products}" styleClass="table table-striped">
-			<p:column>
-				<f:facet name="header"># Id</f:facet>
-				<h:outputText value="#{product.id}" />
-			</p:column>
+		<h:form id="form">
+			<h1>Products List</h1>
+			<h:dataTable id="table" var="product" value="#{listProducts.products}" styleClass="table table-striped">
+				<p:column>
+					<f:facet name="header"># Id</f:facet>
+					<h:outputText value="#{product.id}" />
+				</p:column>
 
-			<p:column>
-				<f:facet name="header">Name</f:facet>
-				<h:outputText value="#{product.name}" />
-			</p:column>
+				<p:column>
+					<f:facet name="header">Name</f:facet>
+					<h:outputText value="#{product.name}" />
+				</p:column>
 
-			<p:column>
-				<f:facet name="header">Price</f:facet>
-				<h:outputText value="#{product.price}">
-					<f:convertNumber type="currency" currencySymbol="$" />
-				</h:outputText>
-			</p:column>
-		</p:dataTable>
+				<p:column>
+					<f:facet name="header">Price</f:facet>
+					<h:outputText value="#{product.price}">
+						<f:convertNumber type="currency" currencySymbol="$" />
+					</h:outputText>
+				</p:column>
 
+				<p:column>
+					<f:facet name="header">Action</f:facet>
+					<h:commandButton id="delete-button" action="#{listProducts.delete(product)}"
+									 label="Delete" />
+				</p:column>
+			</h:dataTable>
+		</h:form>
 	</ui:define>
 
 </ui:composition>
