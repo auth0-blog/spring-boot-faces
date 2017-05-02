@@ -3,38 +3,40 @@
 		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:p="http://java.sun.com/jsf/html"
 	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	  xmlns:f="http://xmlns.jcp.org/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
 <ui:composition template="../layout.xhtml">
 
 	<ui:define name="content">
 		<h:form id="form">
-			<h1>Products List</h1>
-			<h:dataTable id="table" var="product" value="#{listProducts.products}" styleClass="table table-striped">
-				<p:column>
-					<f:facet name="header"># Id</f:facet>
-					<h:outputText value="#{product.id}" />
-				</p:column>
+			<p:panel header="Products List">
+				<p:dataTable id="table" var="product" value="#{listProducts.products}">
+					<p:column>
+						<f:facet name="header"># Id</f:facet>
+						<h:outputText value="#{product.id}" />
+					</p:column>
 
-				<p:column>
-					<f:facet name="header">Name</f:facet>
-					<h:outputText value="#{product.name}" />
-				</p:column>
+					<p:column>
+						<f:facet name="header">Name</f:facet>
+						<h:outputText value="#{product.name}" />
+					</p:column>
 
-				<p:column>
-					<f:facet name="header">Price</f:facet>
-					<h:outputText value="#{product.price}">
-						<f:convertNumber type="currency" currencySymbol="$" />
-					</h:outputText>
-				</p:column>
+					<p:column>
+						<f:facet name="header">Price</f:facet>
+						<h:outputText value="#{product.price}">
+							<f:convertNumber type="currency" currencySymbol="$ " />
+						</h:outputText>
+					</p:column>
 
-				<p:column>
-					<f:facet name="header">Action</f:facet>
-					<h:commandButton id="delete-button" action="#{listProducts.delete(product)}"
-									 label="Delete" />
-				</p:column>
-			</h:dataTable>
+					<p:column>
+						<f:facet name="header">Action</f:facet>
+						<h:commandButton id="delete-button"
+										 action="#{listProducts.delete(product)}"
+										 value="Delete" />
+					</p:column>
+				</p:dataTable>
+			</p:panel>
 		</h:form>
 	</ui:define>
 
