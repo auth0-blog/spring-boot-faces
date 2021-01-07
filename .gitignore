@@ -2,3 +2,7 @@
 *.iml
 data/
 /target/
+*.classpath
+*.project
+classes
+.settings

@@ -11,10 +11,13 @@
 			<p:panel header="Product Details">
 				<h:panelGrid columns="1">
 					<p:outputLabel for="name" value="Name: " />
-					<p:inputText id="name" value="#{productController.product.name}" />
+					<p:inputText id="name" value="#{productController.product.name}" disabled="#{productController.isReadOnly()}" />
 					<p:outputLabel for="price" value="Price: " />
-					<p:inputNumber id="price" value="#{productController.product.price}" />
-					<h:commandButton value="Save" action="#{productController.save}" />
+					<p:inputNumber id="price" value="#{productController.product.price}" disabled="#{productController.isReadOnly()}" />
+					<p:panel>
+						<h:commandButton value="Save" action="#{productController.save}" rendered="#{!productController.isReadOnly()}" />
+						<h:commandButton value="Back" action="#{productController.cancel}" />
+					</p:panel>
 				</h:panelGrid>
 			</p:panel>
 		</h:form>
