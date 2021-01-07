@@ -10,6 +10,14 @@
 
 	<ui:define name="content">
 		<h:form id="form">
+			<div class="ui-g">
+			<div class="ui-g-12">
+				<p:toolbar>
+					<f:facet name="right">
+						<h:commandButton id="create-button" action="#{listProducts.create}" value="New Product" />
+					</f:facet>
+				</p:toolbar>
+			</div>
 			<p:panel header="Products List">
 				<p:dataTable id="table" var="product" value="#{listProducts.products}">
 					<p:column>
@@ -31,12 +39,15 @@
 
 					<p:column>
 						<f:facet name="header">Action</f:facet>
+						<h:commandButton id="view-button" action="#{listProducts.view(product)}" value="View" />
+						<h:commandButton id="edit-button" action="#{listProducts.edit(product)}" value="Edit" />
 						<h:commandButton id="delete-button"
 										 action="#{listProducts.delete(product)}"
 										 value="Delete" />
 					</p:column>
 				</p:dataTable>
 			</p:panel>
+			</div>
 		</h:form>
 	</ui:define>
 

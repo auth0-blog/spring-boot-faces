@@ -23,4 +23,6 @@ public class Product {
 	private BigDecimal price;
 
 	public Product() { }
+
+	public Long getId() { return id; }
 }
